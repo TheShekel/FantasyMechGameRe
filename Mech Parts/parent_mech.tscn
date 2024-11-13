@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bysolw5dbaytd"]
+[gd_scene load_steps=3 format=3 uid="uid://bysolw5dbaytd"]
 
 [ext_resource type="Script" path="res://Mech Parts/parent_mech.gd" id="1_pk73c"]
+[ext_resource type="PackedScene" uid="uid://d0peh3iboupcj" path="res://Mech Parts/CombatMechPart/parent_combat_mech_part.tscn" id="2_yfq02"]
 
 [node name="Parent_Mech" type="Node2D"]
 script = ExtResource("1_pk73c")
+
+[node name="Weapon_Left" parent="." instance=ExtResource("2_yfq02")]
+
+[node name="Weapon_Right" parent="." instance=ExtResource("2_yfq02")]
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
