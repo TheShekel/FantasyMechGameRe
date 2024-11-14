@@ -62,7 +62,7 @@ var Upgrade_Level_Spewer : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Hello there!")
-	WeaponTypeUpgrade(Enum_Weapon_Type.Sword)
+	WeaponTypeUpgrade(Enum_Weapon_Type)
 
 #When a Weapon Type is upgraded, this function is called
 func WeaponTypeUpgrade(Weapon_Type = Enum_Weapon_Type):
@@ -73,11 +73,20 @@ func WeaponTypeUpgrade(Weapon_Type = Enum_Weapon_Type):
 			$Weapon_Right.SwordUpgrade(Upgrade_Level_Sword)
 			print("Sword has been Upgraded")
 		Weapon_Type.Spear:
-			print("Spear")
+			Upgrade_Level_Spear += 1
+			$Weapon_Left.SpearUpgrade(Upgrade_Level_Spear)
+			$Weapon_Right.SpearUpgrade(Upgrade_Level_Spear)
+			print("Spear has been Upgraded")
 		Weapon_Type.Launcher:
-			print("Launcher")
+			Upgrade_Level_Launcher += 1
+			$Weapon_Left.LauncherUpgrade(Upgrade_Level_Launcher)
+			$Weapon_Right.LauncherUpgrade(Upgrade_Level_Launcher)
+			print("Launcher has been Upgraded")
 		Weapon_Type.RapidFire:
-			print("RapidFire")
+			Upgrade_Level_RapidFire += 1
+			$Weapon_Left.RapidFireUpgrade(Upgrade_Level_RapidFire)
+			$Weapon_Right.RapidFireUpgrade(Upgrade_Level_RapidFire)
+			print("Rapid Fire has been Upgraded")
 		Weapon_Type.Canon:
 			print("Canon")
 		Weapon_Type.Launcher:
